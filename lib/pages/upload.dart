@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:convert';
-import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/cupertino.dart';
@@ -9,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:my_test_app/constants.dart' as constants;
 import 'package:image_picker/image_picker.dart';
 import 'package:my_test_app/pages/success.dart';
-import 'package:my_test_app/pages/welcome.dart';
 
 class UploadImage extends StatefulWidget {
   const UploadImage({super.key});

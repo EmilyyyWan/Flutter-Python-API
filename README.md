@@ -14,3 +14,14 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Tips
+
+Install Flask and create a new virtual environment.
+
+Refer to https://phoenixnap.com/kb/install-flask for more information.
+
+Create a folder called "uploadedimages" in your flask project folder.
+
+Run flask application before running the app.
+

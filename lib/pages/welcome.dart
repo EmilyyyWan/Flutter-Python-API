@@ -3,7 +3,6 @@ import 'package:my_test_app/pages/upload.dart';
 import 'package:my_test_app/constants.dart' as constants;
 
 class Welcome extends StatelessWidget {
-  //var title;
 
   const Welcome({super.key, required this.title});
 
