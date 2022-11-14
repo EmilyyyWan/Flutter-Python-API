@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
@@ -8,6 +9,7 @@ import 'package:my_test_app/constants.dart' as constants;
 import 'package:image_picker/image_picker.dart';
 import 'package:my_test_app/pages/success.dart';
 
+
 class UploadImage extends StatefulWidget {
   const UploadImage({super.key});
 
@@ -15,27 +17,22 @@ class UploadImage extends StatefulWidget {
   State<StatefulWidget> createState() => _UploadImageState();
 }
 
+
 class _UploadImageState extends State<UploadImage> {
 
   XFile? image;
   File? imgFile;
+  String result = "";
 
   final ImagePicker picker = ImagePicker();
 
   Future getImage(ImageSource media) async {
-    // var img = await picker.pickImage(source: media);
-    //
-    // setState(() {
-    //   image = img;
-    // });
-
     var img = await picker.pickImage(source: media);
     imgFile = File(img!.path);
     setState(() {
       image = img;
     });
   }
-
 
 
   Future<void> selectSource(BuildContext context) async {
@@ -116,14 +113,15 @@ class _UploadImageState extends State<UploadImage> {
       // filename: 'sample.jpg'
       filename: image!.path.split("/").last
     ));
-    // var headers = {"Content_Type": "multipart/form_data"};
-    // request.headers.addAll(headers);
+
     var response = await request.send();
 
 
-    // http.Response res  = await http.Response.fromStream(response);
-    // var resJson = jsonDecode(res.body);
-    // String message = resJson['message'];
+    http.Response res  = await http.Response.fromStream(response);
+    var resJson = jsonDecode(res.body);
+    String message = resJson['message'];
+    String filename = resJson['filename'];
+    String path = resJson['path'];
 
 
     if(response.statusCode == 200){
@@ -136,7 +134,14 @@ class _UploadImageState extends State<UploadImage> {
       print("Bad Request");
     }
 
-    setState(() {});
+    setState(() {
+      result = filename;
+    });
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Success(message: result)),
+    );
 
   } //end uploadImage()
 
@@ -186,10 +191,10 @@ class _UploadImageState extends State<UploadImage> {
               child: const Text('submit'),
               onPressed: () {
                 uploadImage();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Success()),
-                );
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => Success(message: result)),
+                // );
               },
             ),
           ],
