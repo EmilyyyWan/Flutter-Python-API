@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:my_test_app/pages/upload.dart';
 import 'package:my_test_app/constants.dart' as constants;
 import 'package:http/http.dart' as http;
+import 'package:my_test_app/pages/welcome.dart';
 
 
 class Success extends StatelessWidget {
@@ -35,7 +36,8 @@ class Success extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const UploadImage()),
+                  MaterialPageRoute(builder: (context) => const Welcome(title: constants.title_home)),
+                  // MaterialPageRoute(builder: (context) => const UploadImage()),
                 );
               },
             ),
@@ -51,6 +53,9 @@ class Success extends StatelessWidget {
 }
 
 
+
+
+// GET request
 
 // class _SuccessState extends State<Success> {
 //   String path = "";

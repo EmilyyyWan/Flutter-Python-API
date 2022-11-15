@@ -159,7 +159,10 @@ class _UploadImageState extends State<UploadImage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              child: const Text('upload'),
+              child: const Text(
+                'upload',
+                style: TextStyle(fontSize: 16),
+              ),
               onPressed: () {
                 selectSource(context);
               },
@@ -188,7 +191,10 @@ class _UploadImageState extends State<UploadImage> {
               ),
 
             if (image != null) ElevatedButton(
-              child: const Text('submit'),
+              child: const Text(
+                'submit',
+                style: TextStyle(fontSize: 16),
+              ),
               onPressed: () {
                 uploadImage();
                 // Navigator.push(
