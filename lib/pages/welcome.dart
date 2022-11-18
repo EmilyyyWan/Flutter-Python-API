@@ -28,27 +28,25 @@ class Welcome extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  // MaterialPageRoute(builder: (context) => const MultiImageUpload()),
                   MaterialPageRoute(builder: (context) => const UploadImage()),
                 );
               },
             ),
-            SizedBox(
-              height: 10
-            ),
-            ElevatedButton(
-              child: const Text(
-                "MultiUpload",
-                style: TextStyle(fontSize: 20),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MultiImageUpload()),
-                  // MaterialPageRoute(builder: (context) => const UploadImage()),
-                );
-              },
-            ),
+            // SizedBox(
+            //   height: 10
+            // ),
+            // ElevatedButton(
+            //   child: const Text(
+            //     "MultiUpload",
+            //     style: TextStyle(fontSize: 20),
+            //   ),
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => const MultiImageUpload()),
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),

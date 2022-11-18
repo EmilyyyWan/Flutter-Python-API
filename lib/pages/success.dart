@@ -36,8 +36,8 @@ class Success extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Welcome(title: constants.title_home)),
-                  // MaterialPageRoute(builder: (context) => const UploadImage()),
+                  // MaterialPageRoute(builder: (context) => const Welcome(title: constants.title_home)),
+                  MaterialPageRoute(builder: (context) => const UploadImage()),
                 );
               },
             ),

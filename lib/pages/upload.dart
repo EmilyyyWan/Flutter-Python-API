@@ -94,15 +94,13 @@ class _UploadImageState extends State<UploadImage> {
 
 
   Future<void> uploadImage() async {
-    // String url = "http://10.0.2.2:5000/upload";
-    // String url = "http://127.0.0.1:5000/upload";
 
-    String url = "";
-    if (Platform.isAndroid) {
-      url = "http://10.0.2.2:5000/upload";
-    } else {
-      url = "http://127.0.0.1:5000/upload";
-    }
+    String url = "https://flask-service.onislsvnbg6j8.ca-central-1.cs.amazonlightsail.com/upload";
+    // if (Platform.isAndroid) {
+    //   url = "http://10.0.2.2:5000/upload";
+    // } else {
+    //   url = "http://127.0.0.1:5000/upload";
+    // }
 
     var request = http.MultipartRequest('POST', Uri.parse(url));
 
@@ -121,7 +119,7 @@ class _UploadImageState extends State<UploadImage> {
     var resJson = jsonDecode(res.body);
     String message = resJson['message'];
     String filename = resJson['filename'];
-    String path = resJson['path'];
+    // String path = resJson['path'];
 
 
     if(response.statusCode == 200){

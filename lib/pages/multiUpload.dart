@@ -36,12 +36,12 @@ class _MultiImageUploadState extends State<MultiImageUpload> {
 
 
   Future<void> uploadImage() async {
-    String url = "";
-    if (Platform.isAndroid) {
-      url = "http://10.0.2.2:5000/upload";
-    } else {
-      url = "http://127.0.0.1:5000/upload";
-    }
+    String url = "https://flask-service.onislsvnbg6j8.ca-central-1.cs.amazonlightsail.com/upload";
+    // if (Platform.isAndroid) {
+    //   url = "http://10.0.2.2:5000/upload";
+    // } else {
+    //   url = "http://127.0.0.1:5000/upload";
+    // }
 
     http.MultipartRequest request = http.MultipartRequest('POST', Uri.parse(url));
 
